@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Record Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Operation Record Form</h1>
+        <form id="operationForm">
+            <div class="form-section">
+                <label for="date">Date/Day:</label>
+                <input type="date" id="date" name="date">
+                
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time">
+                
+                <label for="weather">Weather:</label>
+                <select id="weather" name="weather">
+                    <option value="sunny">☼ Sunny</option>
+                    <option value="cloudy">☁ Cloudy</option>
+                    <option value="rainy">🌧 Rainy</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <h2>Utility Consumption</h2>
+                <div class="utility-consumption">
+                    <label for="ipsElectrical">IPS Electrical (kWH):</label>
+                    <input type="number" id="ipsElectrical" name="ipsElectrical">
+                    
+                    <label for="ipsWater">IPS Water (m3):</label>
+                    <input type="number" id="ipsWater" name="ipsWater">
+                    
+                    <label for="mcstpElectrical">MCSTP Electrical (kWH):</label>
+                    <input type="number" id="mcstpElectrical" name="mcstpElectrical">
+                    
+                    <label for="mcstpWater">MCSTP Water (m3):</label>
+                    <input type="number" id="mcstpWater" name="mcstpWater">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Volume of Influent & Effluent</h2>
+                <div class="volume-section">
+                    <label for="influentVolume">Influent Volume (m3):</label>
+                    <input type="number" id="influentVolume" name="influentVolume">
+                    
+                    <label for="effluentVolume">Effluent Volume (m3):</label>
+                    <input type="number" id="effluentVolume" name="effluentVolume">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Inlet Pumping Station (IPS)</h2>
+                <div class="pump-section">
+                    <label for="pumpNo">Pump No:</label>
+                    <input type="text" id="pumpNo" name="pumpNo">
+                    
+                    <label for="startTime">Start Time:</label>
+                    <input type="time" id="startTime" name="startTime">
+                    
+                    <label for="stopTime">Stop Time:</label>
+                    <input type="time" id="stopTime" name="stopTime">
+                    
+                    <label for="runTime">Run Time (min):</label>
+                    <input type="number" id="runTime" name="runTime">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Effluent Disinfection Tank</h2>
+                <div class="tank-section">
+                    <label for="tankLevel">Tank Level (m):</label>
+                    <input type="number" id="tankLevel" name="tankLevel">
+                    
+                    <label for="reclaimedTank">Reclaimed Tank (m):</label>
+                    <input type="number" id="reclaimedTank" name="reclaimedTank">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Sludge Treatment Building (STB)</h2>
+                <div class="sludge-section">
+                    <label for="drySludgeWeight">Dry Sludge Weight (kg):</label>
+                    <input type="number" id="drySludgeWeight" name="drySludgeWeight">
+                    
+                    <label for="polymerUsage">Polymer Usage (bags):</label>
+                    <input type="number" id="polymerUsage" name="polymerUsage">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Parameter Reading</h2>
+                <div class="parameter-section">
+                    <label for="mlss">MLSS (mg/l):</label>
+                    <input type="number" id="mlss" name="mlss">
+                    
+                    <label for="do">DO (mg/l):</label>
+                    <input type="number" id="do" name="do">
+                    
+                    <label for="ph">pH:</label>
+                    <input type="number" id="ph" name="ph">
+                    
+                    <label for="temp">Temp (°C):</label>
+                    <input type="number" id="temp" name="temp">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Comments</h2>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
