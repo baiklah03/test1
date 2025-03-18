@@ -9,115 +9,162 @@
 <body>
     <div class="form-container">
         <h1>Operation Record Form</h1>
-        <form id="operationForm">
-            <div class="form-section">
-                <label for="date">Date/Day:</label>
-                <input type="date" id="date" name="date">
-                
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time">
-                
-                <label for="weather">Weather:</label>
-                <select id="weather" name="weather">
-                    <option value="sunny">☼ Sunny</option>
-                    <option value="cloudy">☁ Cloudy</option>
-                    <option value="rainy">🌧 Rainy</option>
-                </select>
-            </div>
-
-            <div class="form-section">
-                <h2>Utility Consumption</h2>
-                <div class="utility-consumption">
-                    <label for="ipsElectrical">IPS Electrical (kWH):</label>
-                    <input type="number" id="ipsElectrical" name="ipsElectrical">
-                    
-                    <label for="ipsWater">IPS Water (m3):</label>
-                    <input type="number" id="ipsWater" name="ipsWater">
-                    
-                    <label for="mcstpElectrical">MCSTP Electrical (kWH):</label>
-                    <input type="number" id="mcstpElectrical" name="mcstpElectrical">
-                    
-                    <label for="mcstpWater">MCSTP Water (m3):</label>
-                    <input type="number" id="mcstpWater" name="mcstpWater">
+        <div class="form-section">
+            <h2>Date, Time & Weather</h2>
+            <div class="grid-3">
+                <div>
+                    <label for="date">Date/Day:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div>
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time">
+                </div>
+                <div>
+                    <label for="weather">Weather:</label>
+                    <select id="weather" name="weather">
+                        <option value="sunny">☼ Sunny</option>
+                        <option value="cloudy">☁ Cloudy</option>
+                        <option value="rainy">🌧 Rainy</option>
+                    </select>
                 </div>
             </div>
+        </div>
 
-            <div class="form-section">
-                <h2>Volume of Influent & Effluent</h2>
-                <div class="volume-section">
-                    <label for="influentVolume">Influent Volume (m3):</label>
-                    <input type="number" id="influentVolume" name="influentVolume">
-                    
-                    <label for="effluentVolume">Effluent Volume (m3):</label>
-                    <input type="number" id="effluentVolume" name="effluentVolume">
-                </div>
-            </div>
+        <div class="form-section">
+            <h2>Utility Consumption</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Electrical (kWH)</th>
+                        <th>Water (m3)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IPS</td>
+                        <td><input type="number" id="ipsElectrical" name="ipsElectrical"></td>
+                        <td><input type="number" id="ipsWater" name="ipsWater"></td>
+                    </tr>
+                    <tr>
+                        <td>MCSTP</td>
+                        <td><input type="number" id="mcstpElectrical" name="mcstpElectrical"></td>
+                        <td><input type="number" id="mcstpWater" name="mcstpWater"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="form-section">
-                <h2>Inlet Pumping Station (IPS)</h2>
-                <div class="pump-section">
-                    <label for="pumpNo">Pump No:</label>
-                    <input type="text" id="pumpNo" name="pumpNo">
-                    
-                    <label for="startTime">Start Time:</label>
-                    <input type="time" id="startTime" name="startTime">
-                    
-                    <label for="stopTime">Stop Time:</label>
-                    <input type="time" id="stopTime" name="stopTime">
-                    
-                    <label for="runTime">Run Time (min):</label>
-                    <input type="number" id="runTime" name="runTime">
-                </div>
-            </div>
+        <div class="form-section">
+            <h2>Volume of Influent & Effluent</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Totalizer (m3)</th>
+                        <th>Exact Volume/Day (m3)</th>
+                        <th>Flowrate (m3/hr)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Influent Volume</td>
+                        <td><input type="number" id="influentTotalizer" name="influentTotalizer"></td>
+                        <td><input type="number" id="influentExact" name="influentExact"></td>
+                        <td><input type="number" id="influentFlowrate" name="influentFlowrate"></td>
+                    </tr>
+                    <tr>
+                        <td>Effluent Volume</td>
+                        <td><input type="number" id="effluentTotalizer" name="effluentTotalizer"></td>
+                        <td><input type="number" id="effluentExact" name="effluentExact"></td>
+                        <td><input type="number" id="effluentFlowrate" name="effluentFlowrate"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="form-section">
-                <h2>Effluent Disinfection Tank</h2>
-                <div class="tank-section">
-                    <label for="tankLevel">Tank Level (m):</label>
-                    <input type="number" id="tankLevel" name="tankLevel">
-                    
-                    <label for="reclaimedTank">Reclaimed Tank (m):</label>
-                    <input type="number" id="reclaimedTank" name="reclaimedTank">
-                </div>
-            </div>
+        <div class="form-section">
+            <h2>Inlet Pumping Station (IPS)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pump No.</th>
+                        <th>Start Time</th>
+                        <th>Stop Time</th>
+                        <th>Run Time (min)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="pumpNo" name="pumpNo"></td>
+                        <td><input type="time" id="startTime" name="startTime"></td>
+                        <td><input type="time" id="stopTime" name="stopTime"></td>
+                        <td><input type="number" id="runTime" name="runTime"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="form-section">
-                <h2>Sludge Treatment Building (STB)</h2>
-                <div class="sludge-section">
-                    <label for="drySludgeWeight">Dry Sludge Weight (kg):</label>
-                    <input type="number" id="drySludgeWeight" name="drySludgeWeight">
-                    
-                    <label for="polymerUsage">Polymer Usage (bags):</label>
-                    <input type="number" id="polymerUsage" name="polymerUsage">
-                </div>
-            </div>
+        <div class="form-section">
+            <h2>Effluent Disinfection Tank</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tank</th>
+                        <th>Level (m)</th>
+                        <th>Max Level (m)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Disinfection Tank</td>
+                        <td><input type="number" id="disinfectionTank" name="disinfectionTank"></td>
+                        <td>3.8</td>
+                    </tr>
+                    <tr>
+                        <td>Reclaimed Tank</td>
+                        <td><input type="number" id="reclaimedTank" name="reclaimedTank"></td>
+                        <td>3.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="form-section">
-                <h2>Parameter Reading</h2>
-                <div class="parameter-section">
-                    <label for="mlss">MLSS (mg/l):</label>
-                    <input type="number" id="mlss" name="mlss">
-                    
-                    <label for="do">DO (mg/l):</label>
-                    <input type="number" id="do" name="do">
-                    
-                    <label for="ph">pH:</label>
-                    <input type="number" id="ph" name="ph">
-                    
-                    <label for="temp">Temp (°C):</label>
-                    <input type="number" id="temp" name="temp">
-                </div>
-            </div>
+        <div class="form-section">
+            <h2>Parameter Reading</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>LCP</th>
+                        <th>SCADA</th>
+                        <th>Portable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MLSS (mg/l)</td>
+                        <td><input type="number" id="mlssLcp" name="mlssLcp"></td>
+                        <td><input type="number" id="mlssScada" name="mlssScada"></td>
+                        <td><input type="number" id="mlssPortable" name="mlssPortable"></td>
+                    </tr>
+                    <tr>
+                        <td>DO (mg/l)</td>
+                        <td><input type="number" id="doLcp" name="doLcp"></td>
+                        <td><input type="number" id="doScada" name="doScada"></td>
+                        <td><input type="number" id="doPortable" name="doPortable"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="form-section">
-                <h2>Comments</h2>
-                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
-            </div>
+        <div class="form-section">
+            <h2>Comments</h2>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        </div>
 
-            <button type="submit">Submit</button>
-        </form>
+        <button type="submit">Submit</button>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
