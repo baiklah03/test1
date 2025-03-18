@@ -37,7 +37,7 @@ table {
 }
 
 table th, table td {
-    padding: 10px;
+    padding: 8px; /* Reduced padding for compactness */
     border: 1px solid #ddd;
     text-align: left;
 }
@@ -53,16 +53,18 @@ table td {
 }
 
 input[type="text"], input[type="number"], input[type="date"], input[type="time"], select, textarea {
-    width: 100%;
-    padding: 8px;
+    width: 90%; /* Reduced width to prevent covering text */
+    padding: 6px; /* Reduced padding for smaller input boxes */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 80px; /* Reduced height for comments box */
+    width: 100%; /* Full width for textarea */
 }
 
 button {
@@ -84,11 +86,22 @@ button:hover {
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 10px; /* Reduced gap for compactness */
     margin-bottom: 20px;
 }
 
 .grid-3 div {
     display: flex;
     flex-direction: column;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .grid-3 {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    input[type="text"], input[type="number"], input[type="date"], input[type="time"], select, textarea {
+        width: 100%; /* Full width on small screens */
+    }
 }
